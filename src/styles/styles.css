@@ -1,0 +1,103 @@
+:root {
+  background-color: grey;
+}
+
+.preview {
+  padding: 16px 24px;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 50%;
+  justify-self: center;
+}
+
+.clear,
+.back {
+  padding: 16px 24px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 50%;
+  justify-self: center;
+}
+
+.add {
+  padding: 12px 20px;
+  background-color: green;
+  color: white;
+  border: none;
+  margin: 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: start;
+  align-self: center;
+}
+
+.remove {
+  padding: 12px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  margin: 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: start;
+  align-self: center;
+}
+
+.upload {
+  padding: 12px 20px;
+  width: 400px;
+}
+
+input[type="text"] {
+  width: 400px;
+  height: max(32px);
+  font-size: 14px;
+  margin: 16px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: start;
+  align-self: center;
+}
+
+label {
+  font-size: 16px;
+  margin: 8px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  justify-self: end;
+  align-self: center;
+}
+
+.container {
+  background-color: white;
+  margin: 32px auto;
+  padding: 32px;
+  width: min(800px, 80%);
+  display: grid;
+}
+
+.innerContainer {
+  margin: 8px 0px;
+  border: 1px dashed grey;
+  justify-self: center;
+}
+
+.section {
+  display: grid;
+  justify-self: center;
+  grid-template-columns: 1fr 2fr;
+}
+
+span {
+  font-weight: 600;
+}
