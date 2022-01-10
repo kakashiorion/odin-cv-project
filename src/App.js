@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./styles/styles.css";
-import PreviewPage from "./components/Preview";
+import PreviewPage from "./components/CV";
 import DetailPage from "./components/Detail";
 
 export default class App extends Component {
@@ -11,7 +11,16 @@ export default class App extends Component {
     this.hideCV = this.hideCV.bind(this);
   }
 
+  storeData() {
+    localStorage.clear();
+    let inputList = document.getElementsByTagName("input");
+    for (let item of inputList) {
+      localStorage.setItem(item.name, item.value);
+    }
+  }
+
   showCV() {
+    this.storeData();
     this.setState({
       isPreviewing: true,
     });

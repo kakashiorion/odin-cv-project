@@ -7,6 +7,7 @@ export default class GeneralInfo extends Component {
       <div className="container">
         <span>GENERAL INFO</span>
         <Name />
+        <Profession />
         <Email />
         <Phone />
         <Website />
@@ -22,6 +23,17 @@ class Name extends Component {
       <div className="section">
         <label htmlFor="Name">Your Name:</label>
         <input type={"text"} name="Name"></input>
+      </div>
+    );
+  }
+}
+
+class Profession extends Component {
+  render() {
+    return (
+      <div className="section">
+        <label htmlFor="Profession">Your Profession:</label>
+        <input type={"text"} name="Profession"></input>
       </div>
     );
   }

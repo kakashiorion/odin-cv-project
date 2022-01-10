@@ -1,0 +1,58 @@
+.cvContainer {
+  background-color: white;
+  height: 800px;
+  aspect-ratio: 0.707;
+  padding: 32px;
+  display: grid;
+  margin: auto;
+  gap: 8px;
+  align-content: flex-start;
+}
+
+.cvGeneralInfo {
+  /* height: 120px; */
+  border: 1px dashed black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+}
+
+.cvName {
+  font-size: 24px;
+  font-weight: 700;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  justify-self: start;
+  /* align-self: flex-end; */
+}
+
+.cvProfession {
+  font-size: 16px;
+  font-weight: 700;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  justify-self: start;
+}
+
+.cvEmail,
+.cvPhone,
+.cvWebsite {
+  font-size: 14px;
+  font-weight: 500;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: end;
+  align-self: flex-end;
+}
+
+.cvEducation {
+  height: 240px;
+  border: 1px dashed black;
+}
+
+.cvExperience {
+  height: 240px;
+  border: 1px dashed black;
+}

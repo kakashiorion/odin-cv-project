@@ -21,10 +21,19 @@ export default class DetailPage extends Component {
 }
 
 class ClearButton extends Component {
+  clearData() {
+    let inputList = document.getElementsByTagName("input");
+    for (let index = 0; index < inputList.length; ++index) {
+      inputList[index].value = "";
+    }
+  }
+
   render() {
     return (
       <div className="container">
-        <button className="clear">CLEAR</button>
+        <button className="clear" onClick={this.clearData}>
+          CLEAR ALL DATA
+        </button>
       </div>
     );
   }

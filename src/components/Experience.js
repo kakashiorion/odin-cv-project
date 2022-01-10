@@ -10,7 +10,6 @@ export default class Experience extends Component {
   }
 
   addExperienceSection = () => {
-    console.log(this.state.exSectionList);
     this.setState({
       exSectionList: this.state.exSectionList.concat([this.state.id]),
       id: uniqid(),
@@ -21,11 +20,11 @@ export default class Experience extends Component {
     return (
       <div className="container">
         <span>EXPERIENCE</span>
-        <Company />
-        <JobTitle />
-        <JobTasks />
-        <DateJobStart />
-        <DateJobEnd />
+        <Company id={""} />
+        <JobTitle id={""} />
+        <JobTasks id={""} />
+        <DateJobStart id={""} />
+        <DateJobEnd id={""} />
         <ExperienceExtraList exList={this.state.exSectionList} />
         <AddExperience click={this.addExperienceSection} />
       </div>
@@ -52,6 +51,7 @@ class ExperienceExtraList extends Component {
         {this.props.exList.map((ex) => {
           return (
             <ExperienceSection
+              id={ex}
               key={ex}
               removeEx={() => this.removeExperience(ex)}
             />
@@ -66,11 +66,11 @@ class ExperienceSection extends Component {
   render() {
     return (
       <div className="innerContainer">
-        <Company />
-        <JobTitle />
-        <JobTasks />
-        <DateJobStart />
-        <DateJobEnd />
+        <Company id={this.props.id} />
+        <JobTitle id={this.props.id} />
+        <JobTasks id={this.props.id} />
+        <DateJobStart id={this.props.id} />
+        <DateJobEnd id={this.props.id} />
         <RemoveExperience removeEx={this.props.removeEx} />
       </div>
     );
@@ -82,7 +82,7 @@ class Company extends Component {
     return (
       <div className="section">
         <label htmlFor="Company">Company Name:</label>
-        <input type={"text"} name="Company"></input>
+        <input type={"text"} name={"Company" + this.props.id}></input>
       </div>
     );
   }
@@ -93,7 +93,7 @@ class JobTitle extends Component {
     return (
       <div className="section">
         <label htmlFor="JobTitle">Job Title:</label>
-        <input type={"text"} name="JobTitle"></input>
+        <input type={"text"} name={"JobTitle" + this.props.id}></input>
       </div>
     );
   }
@@ -104,7 +104,7 @@ class DateJobStart extends Component {
     return (
       <div className="section">
         <label htmlFor="DateJobStart">From Date:</label>
-        <input type={"text"} name="DateJobStart"></input>
+        <input type={"date"} name={"DateJobStart" + this.props.id}></input>
       </div>
     );
   }
@@ -115,7 +115,7 @@ class JobTasks extends Component {
     return (
       <div className="section">
         <label htmlFor="JobTasks">Job Tasks:</label>
-        <input type={"text"} name="JobTasks"></input>
+        <input type={"text"} name={"JobTasks" + this.props.id}></input>
       </div>
     );
   }
@@ -126,7 +126,7 @@ class DateJobEnd extends Component {
     return (
       <div className="section">
         <label htmlFor="DateJobEnd">To Date:</label>
-        <input type={"text"} name="DateJobEnd"></input>
+        <input type={"date"} name={"DateJobEnd" + this.props.id}></input>
       </div>
     );
   }

@@ -53,12 +53,7 @@
   align-self: center;
 }
 
-.upload {
-  padding: 12px 20px;
-  width: 400px;
-}
-
-input[type="text"] {
+input {
   width: 400px;
   height: max(32px);
   font-size: 14px;

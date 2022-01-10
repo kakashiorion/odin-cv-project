@@ -10,7 +10,6 @@ export default class Education extends Component {
   }
 
   addEducationSection = () => {
-    console.log(this.state.edSectionList);
     this.setState({
       edSectionList: this.state.edSectionList.concat([this.state.id]),
       id: uniqid(),
@@ -21,10 +20,10 @@ export default class Education extends Component {
     return (
       <div id="educationContainer" className="container">
         <span>EDUCATION</span>
-        <SchoolName />
-        <Title />
-        <DateStudyStart />
-        <DateStudyEnd />
+        <SchoolName id={""} />
+        <TitleStudy id={""} />
+        <DateStudyStart id={""} />
+        <DateStudyEnd id={""} />
         <EducationExtraList edList={this.state.edSectionList} />
         <AddEducation click={this.addEducationSection} />
       </div>
@@ -52,6 +51,7 @@ class EducationExtraList extends Component {
           return (
             <EducationSection
               key={ed}
+              id={ed}
               removeEd={() => this.removeEducation(ed)}
             />
           );
@@ -65,10 +65,10 @@ class EducationSection extends Component {
   render() {
     return (
       <div className="innerContainer">
-        <SchoolName />
-        <Title />
-        <DateStudyStart />
-        <DateStudyEnd />
+        <SchoolName id={this.props.id} />
+        <TitleStudy id={this.props.id} />
+        <DateStudyStart id={this.props.id} />
+        <DateStudyEnd id={this.props.id} />
         <RemoveEducation removeEd={this.props.removeEd} />
       </div>
     );
@@ -80,18 +80,18 @@ class SchoolName extends Component {
     return (
       <div className="section">
         <label htmlFor="SchoolName">School Name:</label>
-        <input type={"text"} name="SchoolName"></input>
+        <input type={"text"} name={"SchoolName" + this.props.id}></input>
       </div>
     );
   }
 }
 
-class Title extends Component {
+class TitleStudy extends Component {
   render() {
     return (
       <div className="section">
         <label htmlFor="TitleStudy">Title of Study:</label>
-        <input type={"text"} name="TitleStudy"></input>
+        <input type={"text"} name={"TitleStudy" + this.props.id}></input>
       </div>
     );
   }
@@ -102,7 +102,7 @@ class DateStudyStart extends Component {
     return (
       <div className="section">
         <label htmlFor="DateStudyStart">Date of Starting Study:</label>
-        <input type={"text"} name="DateStudyStart"></input>
+        <input type={"date"} name={"DateStudyStart" + this.props.id}></input>
       </div>
     );
   }
@@ -113,7 +113,7 @@ class DateStudyEnd extends Component {
     return (
       <div className="section">
         <label htmlFor="DateStudyEnd">Date of Completing Study:</label>
-        <input type={"text"} name="DateStudyEnd"></input>
+        <input type={"date"} name={"DateStudyEnd" + this.props.id}></input>
       </div>
     );
   }
