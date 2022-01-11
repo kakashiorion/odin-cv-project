@@ -5,6 +5,20 @@ import Education from "./Education";
 import Experience from "./Experience";
 
 export default class DetailPage extends Component {
+  retrieveData() {
+    let inputList = document.getElementsByTagName("input");
+    for (let item of inputList) {
+      item.value = localStorage.getItem(item.name);
+    }
+    let textList = document.getElementsByTagName("textarea");
+    for (let item of textList) {
+      item.value = localStorage.getItem(item.name);
+    }
+  }
+
+  componentDidMount() {
+    this.retrieveData();
+  }
   render() {
     return (
       <>

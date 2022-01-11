@@ -53,7 +53,8 @@
   align-self: center;
 }
 
-input {
+input,
+textarea {
   width: 400px;
   height: max(32px);
   font-size: 14px;
@@ -62,6 +63,10 @@ input {
   grid-column-end: 3;
   justify-self: start;
   align-self: center;
+}
+
+textarea {
+  height: 200px;
 }
 
 label {

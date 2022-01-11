@@ -80,7 +80,7 @@ class ExperienceSection extends Component {
 class Company extends Component {
   render() {
     return (
-      <div className="section">
+      <div className="section company">
         <label htmlFor="Company">Company Name:</label>
         <input type={"text"} name={"Company" + this.props.id}></input>
       </div>
@@ -115,7 +115,7 @@ class JobTasks extends Component {
     return (
       <div className="section">
         <label htmlFor="JobTasks">Job Tasks:</label>
-        <input type={"text"} name={"JobTasks" + this.props.id}></input>
+        <textarea rows="20" name={"JobTasks" + this.props.id}></textarea>
       </div>
     );
   }

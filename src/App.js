@@ -9,12 +9,16 @@ export default class App extends Component {
     this.state = { isPreviewing: false };
     this.showCV = this.showCV.bind(this);
     this.hideCV = this.hideCV.bind(this);
+    localStorage.clear();
   }
 
   storeData() {
-    localStorage.clear();
     let inputList = document.getElementsByTagName("input");
     for (let item of inputList) {
+      localStorage.setItem(item.name, item.value);
+    }
+    let textList = document.getElementsByTagName("textarea");
+    for (let item of textList) {
       localStorage.setItem(item.name, item.value);
     }
   }

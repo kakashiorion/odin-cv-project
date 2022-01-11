@@ -10,20 +10,22 @@
 }
 
 .cvGeneralInfo {
-  /* height: 120px; */
   border: 1px dashed black;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   align-content: center;
 }
 
 .cvName {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   grid-column-start: 1;
   grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
   justify-self: start;
-  /* align-self: flex-end; */
+  align-self: center;
 }
 
 .cvProfession {
@@ -31,9 +33,10 @@
   font-weight: 700;
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
   justify-self: start;
+  align-self: center;
 }
 
 .cvEmail,
@@ -44,15 +47,63 @@
   grid-column-start: 2;
   grid-column-end: 3;
   justify-self: end;
-  align-self: flex-end;
+  align-self: center;
 }
 
-.cvEducation {
-  height: 240px;
-  border: 1px dashed black;
-}
-
+.cvEducation,
 .cvExperience {
-  height: 240px;
+  /* height: 240px; */
   border: 1px dashed black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: flex-start;
+  gap: 2px;
+}
+
+.cvEducationHeader,
+.cvExperienceHeader {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.cvSchoolName,
+.cvCompany {
+  font-size: 16px;
+  font-weight: 600;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding-top: 8px;
+}
+
+.cvTitleStudy,
+.cvJobTitle,
+.cvJobTasks {
+  font-size: 14px;
+  font-weight: 600;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.cvJobTasks {
+  font-weight: 400;
+}
+
+.cvExperienceSection,
+.cvEducationSection {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: flex-start;
+  gap: 2px;
+}
+
+.cvDateStudy,
+.cvDateJob {
+  font-size: 14px;
+  font-weight: 400;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: end;
+  align-self: flex-end;
 }
